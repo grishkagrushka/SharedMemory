@@ -35,13 +35,13 @@ public final class Executor {
 			}
 		};
 
-		Scenario scenario = new Scenario(Main.class) {
-			{
-				command(1, "S10");
-				command(2, "S10");
-				command(3, "S10");
-			}
-		};
+//		Scenario scenario = new Scenario(Main.class) {
+//			{
+//				command(1, "S10");
+//				command(2, "S10");
+//				command(3, "S10");
+//			}
+//		};
 
 		// Non-overlapping (sequential) operations.
 //		Scenario scenario = new Scenario(Main.class) {
@@ -62,13 +62,13 @@ public final class Executor {
 //		};
 
 		// One process crashes and the other processes keep running.
-//		Scenario scenario = new Scenario(Main.class) {
-//			{
-//				command(1, "X");
-//				command(2, "W2");
-//				command(3, "S5000:R");
-//			}
-//		};
+		Scenario scenario = new Scenario(Main.class) {
+			{
+				command(1, "X");
+				command(2, "W2");
+				command(3, "S5000:R");
+			}
+		};
 
 		scenario.executeOn(topology);
 
